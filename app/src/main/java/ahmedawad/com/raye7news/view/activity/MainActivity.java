@@ -144,6 +144,8 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onFailure(@NonNull Call<NewsObject> call, @NonNull Throwable t) {
                     Toast.makeText(MainActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                    progressDialog.dismiss();
+                    recreate();
                 }
             });
         }
